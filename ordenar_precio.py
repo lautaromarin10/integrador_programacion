@@ -53,7 +53,7 @@ def merge(primer_lista : list, segunda_lista : list):
 def merge_sort(productos: list):
 
     #Si la lista tiene 1 elemento o menos ya se encuentra ordenada
-    if len(productos) < 1:
+    if len(productos) <= 1:
         return productos
 
     #Se divide la lista de productos en dos mitades.
@@ -72,6 +72,7 @@ def nombre_algoritmo(algoritmo_seleccionado: int):
 
 def ejecutar_algoritmo_seleccionado(algoritmo: int):
     #Ejecuta el algoritmo seleccionado por el usuario
+    print("Lista de productos sin ordenar:\n", productos)
     return quick_sort(productos) if algoritmo == 1 else merge_sort(productos)
 
 def ordenamiento_por_precio():
@@ -86,7 +87,7 @@ def ordenamiento_por_precio():
     
     #Se procede a calcular ei tiempo inicial, ejecutar el algoritmo y posteriormente tomar el tiempo que tardo en ejecutarse
     tiempo_inicial = time.time()
-    print(ejecutar_algoritmo_seleccionado(algoritmo_elegido))
+    print(f"Lista de productos ordenada con {nombre_algoritmo(algoritmo_elegido)}:\n",ejecutar_algoritmo_seleccionado(algoritmo_elegido))
     tiempo_final = time.time()
     
     #Se imprime el tiempo de ejecución del algoritmo
